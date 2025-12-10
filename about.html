@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .img-block {
+        width: 100%;
+        display: block;
+    }
+
+    /* NAVIGATION BAR */
+    .nav-menu {
+        width: 100%;
+        text-align: right;
+        margin: 20px 30px 0 0;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .nav-menu a {
+        color: black;
+        text-decoration: none;
+        margin-left: 20px;
+    }
+
+    .nav-menu a:hover {
+        color: #444;
+        text-decoration: underline;
+    }
+
+    /* ANIMATED BOD.PNG */
+    .animated-img {
+        animation: fadeZoom 2.5s ease-in-out forwards;
+        opacity: 0;
+    }
+
+    @keyframes fadeZoom {
+        0% {
+            opacity: 0;
+            transform: scale(1.05);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* ABOUT US OVERLAY */
+    .about-container {
+        position: relative;
+        width: 100%;
+    }
+
+.about-overlay {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    color: black; /* changed to black */
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.6;
+    text-shadow: none; /* shadow removed for clean black text */
+}
+
+
+    .about-overlay h1 {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    /* TEXT ANIMATION */
+    .text-animate {
+        opacity: 0;
+        transform: translateY(25px);
+        animation: textFade 1.5s forwards ease-out;
+    }
+
+    @keyframes textFade {
+        0% {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    /* FOOTER */
+    .footer-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .footer-overlay {
+        position: absolute;
+        bottom: 20px;
+        left: 30px;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        display: flex;
+        gap: 30px;
+        flex-wrap: nowrap;
+    }
+
+    .footer-overlay a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .footer-overlay a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- TOP IMAGE -->
+    <img class="img-block" src="C:\Users\thiya\Downloads\Prem\foot.png">
+
+    <!-- NAVIGATION -->
+    <div class="nav-menu">
+        <a href="home.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- BOD.PNG WITH ANIMATION + ABOUT US CONTENT -->
+    <div class="about-container">
+        <img class="img-block animated-img" src="C:\Users\thiya\Downloads\Prem\bod.png">
+
+        <div class="about-overlay">
+
+            <h1 class="text-animate" style="animation-delay:0.5s;">About Us</h1>
+
+            <p class="text-animate" style="animation-delay:1s;">
+                <strong>NEM Rice</strong> stands for purity, trust, and tradition. For generations, our farmers have been
+                cultivating rice in the fertile soils of Thiruvallur with dedication and care.
+            </p>
+
+            <p class="text-animate" style="animation-delay:1.5s;">
+                Every grain we produce is a reflection of our passion and commitment to delivering healthy,
+                premium-quality rice to families and businesses.
+            </p>
+
+            <p class="text-animate" style="animation-delay:2s;">
+                Our process combines traditional farming practices with modern technology to ensure purity,
+                aroma, and long-grain perfection.
+            </p>
+
+            <p class="text-animate" style="animation-delay:2.5s;">
+                We thank you for choosing NEM — where tradition meets excellence.
+            </p>
+
+            <!-- EXTRA CONTENT ADDED -->
+            <p class="text-animate" style="animation-delay:3s;">
+                Over the years, NEM Rice has grown from a small family-owned farm into a trusted supplier across Tamil Nadu.
+                Our dedication to consistency and freshness has earned us long-term relationships with households,
+                restaurants, and retailers.
+            </p>
+
+            <p class="text-animate" style="animation-delay:3.5s%;">
+                We also focus strongly on environmentally conscious farming practices. From soil preservation to water
+                management, we ensure sustainable growth while maintaining the highest grain quality.
+            </p>
+
+            <p class="text-animate" style="animation-delay:4s;">
+                For us, rice is more than a product — it is a symbol of tradition, culture, and nourishment.  
+                With every pack of NEM Rice, we strive to deliver trust, taste, and heritage to your home.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-container">
+        <img class="img-block" src="C:\Users\thiya\Downloads\Prem\foot.png">
+
+        <div class="footer-overlay">
+            <span>📞 9361151903</span>
+            <span>📍 Thiruvallur</span>
+            <span>✉️ contact@nemrice.com</span>
+            <span><a href="https://www.facebook.com" target="_blank">🌐 Facebook</a></span>
+            <span><a href="https://www.instagram.com" target="_blank">📸 Instagram</a></span>
+        </div>
+    </div>
+
+</body>
+</html>

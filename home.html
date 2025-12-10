@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .img-block {
+        width: 100%;
+        display: block;
+    }
+
+    /* HOME NAVIGATION */
+    .nav-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .nav-container img {
+        width: 100%;
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: right;
+    }
+
+    .nav-menu a {
+        color: black;
+        text-decoration: none;
+        margin-left: 20px;
+    }
+
+    .nav-menu a:hover {
+        color: #444;
+        text-decoration: underline;
+    }
+
+    /* FOOTER IMAGE OVERLAY (LEFT SIDE) */
+    .footer-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .footer-overlay {
+        position: absolute;
+        bottom: 20px;          /* adjust position inside the image */
+        left: 30px;            /* aligned to LEFT */
+        color: white;          /* changed from black to white */
+        font-size: 20px;
+        font-weight: bold;
+        display: flex;
+        gap: 30px;             /* spacing between items */
+        flex-wrap: nowrap;     /* prevent wrapping */
+    }
+
+    .footer-overlay a {
+        color: white;          /* white hyperlink */
+        text-decoration: none;
+    }
+
+    .footer-overlay a:hover {
+        text-decoration: underline;
+    }
+
+</style>
+</head>
+
+<body>
+
+    <!-- TOP foot.png -->
+    <img class="img-block" src="C:\Users\thiya\Downloads\Prem\foot.png">
+
+    <!-- HOME SECTION -->
+    <div class="nav-container">
+        <img src="C:\Users\thiya\Downloads\Prem\home.png">
+
+        <div class="nav-menu">
+            <a href="C:\Users\thiya\Downloads\Prem\home.html">Home</a>
+            <a href="C:\Users\thiya\Downloads\Prem\product.html">Product</a>
+            <a href="C:\Users\thiya\Downloads\Prem\about.html">About Us</a>
+            <a href="C:\Users\thiya\Downloads\Prem\contact.html">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- BOTTOM foot.png WITH FOOTER TEXT ON LEFT -->
+    <div class="footer-container">
+        <img class="img-block" src="C:\Users\thiya\Downloads\Prem\foot.png">
+
+        <div class="footer-overlay">
+            <span>📞 9361151903</span>
+            <span>📍 Thiruvallur</span>
+            <span>✉️ contact@nemrice.com</span>
+
+            <!-- Social hyperlinks -->
+            <span><a href="https://www.facebook.com" target="_blank">🌐 Facebook</a></span>
+            <span><a href="https://www.instagram.com" target="_blank">📸 Instagram</a></span>
+        </div>
+    </div>
+
+</body>
+</html>

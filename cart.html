@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Your Cart</title>
+<script src="https://pay.google.com/gp/p/js/pay.js" async></script>
+
+<style>
+    body {
+        font-family: Arial;
+        margin: 0;
+        padding: 0;
+        background: #f7f7f7;
+    }
+
+    .cart-box {
+        width: 90%;
+        max-width: 600px;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    h1 { text-align: center; }
+    .row { font-size: 20px; margin: 15px 0; }
+
+    #gpayBtn { text-align: center; margin-top: 20px; }
+
+    a { text-decoration: none; font-size: 18px; }
+</style>
+</head>
+
+<body>
+
+<div class="cart-box">
+    <h1>Your Cart</h1>
+
+    <div class="row">Product: <b id="pName"></b></div>
+    <div class="row">Quantity: <span id="pQty"></span></div>
+    <div class="row">Price per unit: ₹<span id="unitPrice"></span></div>
+    <div class="row">Total Price: ₹<span id="total"></span></div>
+
+    <div id="gpayBtn"></div>
+
+    <br>
+    <a href="product.html">⬅ Back to Products</a>
+</div>
+
+<script>
+/* LOAD DATA FROM LOCAL STORAGE */
+let name = localStorage.getItem("cartName");
+let qty = localStorage.getItem("cartQty");
+let unit = localStorage.getItem("cartUnitPrice");
+let total = localStorage.getItem("cartTotal");
+
+document.getElementById("pName").innerHTML = name;
+document.getElementById("pQty").innerHTML = qty;
+document.getElementById("unitPrice").innerHTML = unit;
+document.getElementById("total").innerHTML = total;
+
+/* GOOGLE PAY */
+function onGooglePayLoaded() {
+
+    const request = {
+        apiVersion: 2,
+        apiVersionMinor: 0,
+        allowedPaymentMethods: [{
+            type: "CARD",
+            parameters: {
+                allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+                allowedCardNetworks: ["VISA", "MASTERCARD"]
+            },
+            tokenizationSpecification: {
+                type: "PAYMENT_GATEWAY",
+                parameters: {
+                    gateway: "example",
+                    gatewayMerchantId: "exampleMerchantId"
+                }
+            }
+        }],
+        merchantInfo: {
+            merchantId: "1234567890",
+            merchantName: "Nem Rice Shop"
+        },
+        transactionInfo: {
+            totalPriceStatus: "FINAL",
+            totalPrice: total,
+            currencyCode: "INR"
+        }
+    };
+
+    const client = new google.payments.api.PaymentsClient({
+        environment: "TEST"
+    });
+
+    client.isReadyToPay(request)
+        .then(res => {
+            if (res.result) {
+                const button = client.createButton({
+                    onClick: () => {
+                        client.loadPaymentData(request)
+                            .then(data => alert("Payment Success"))
+                            .catch(err => console.log(err));
+                    }
+                });
+
+                document.getElementById("gpayBtn").appendChild(button);
+            }
+        });
+}
+
+window.onload = onGooglePayLoaded;
+</script>
+
+</body>
+</html>

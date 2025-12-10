@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>About Us - NEM Rice</title>
 <style>
     body {
         margin: 0;
@@ -40,14 +41,8 @@
     }
 
     @keyframes fadeZoom {
-        0% {
-            opacity: 0;
-            transform: scale(1.05);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1);
-        }
+        0% { opacity: 0; transform: scale(1.05); }
+        100% { opacity: 1; transform: scale(1); }
     }
 
     /* ABOUT US OVERLAY */
@@ -80,14 +75,8 @@
     }
 
     @keyframes textFade {
-        0% {
-            opacity: 0;
-            transform: translateY(25px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0px);
-        }
+        0% { opacity: 0; transform: translateY(25px); }
+        100% { opacity: 1; transform: translateY(0px); }
     }
 
     /* FOOTER */
@@ -105,7 +94,7 @@
         font-weight: bold;
         display: flex;
         gap: 30px;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
 
     .footer-overlay a {
@@ -116,12 +105,52 @@
     .footer-overlay a:hover {
         text-decoration: underline;
     }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+        .about-overlay { font-size: 20px; top: 8%; left: 5%; width: 90%; }
+        .about-overlay h1 { font-size: 36px; }
+    }
+
+    @media (max-width: 768px) {
+        .nav-menu {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .nav-menu a {
+            display: inline-block;
+            margin: 5px 10px;
+        }
+        .about-overlay {
+            font-size: 18px;
+            top: 5%;
+            left: 3%;
+            width: 94%;
+        }
+        .about-overlay h1 {
+            font-size: 32px;
+        }
+        .footer-overlay {
+            font-size: 16px;
+            flex-direction: column;
+            gap: 10px;
+            left: 15px;
+            bottom: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .about-overlay { font-size: 16px; top: 3%; left: 2%; width: 96%; }
+        .about-overlay h1 { font-size: 28px; }
+    }
+
 </style>
 </head>
 
 <body>
 
-    <!-- TOP HEADER IMAGE -->
+    <!-- HEADER IMAGE -->
     <img class="img-block" src="https://github.com/ThiyagaRajan13k/nem-rice-website/blob/main/foot.png?raw=true" alt="Header Image">
 
     <!-- NAVIGATION -->
